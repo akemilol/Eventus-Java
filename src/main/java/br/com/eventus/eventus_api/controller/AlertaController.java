@@ -2,29 +2,26 @@ package br.com.eventus.eventus_api.controller;
 
 import br.com.eventus.eventus_api.model.Alerta;
 import br.com.eventus.eventus_api.repository.AlertaRepository;
-import jakarta.validation.Valid;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/alertas")
+@Tag(name = "Alertas", description = "Gerenciamento dos alertas do sistema Eventus")
 public class AlertaController {
 
     @Autowired
     private AlertaRepository alertaRepository;
 
     @GetMapping
-    public Page<Alerta> listar(Pageable pageable, @RequestParam(required = false) String tipoAlerta) {
-        if (tipoAlerta != null && !tipoAlerta.isEmpty()) {
-            return alertaRepository.findByTipoAlertaContainingIgnoreCase(tipoAlerta, pageable);
-        }
-        return alertaRepository.findAll(pageable);
+    public List<Alerta> listarTodos() {
+        return alertaRepository.findAll();
     }
 
     @GetMapping("/{id}")
@@ -34,20 +31,17 @@ public class AlertaController {
     }
 
     @PostMapping
-    public ResponseEntity<Alerta> criar(@RequestBody @Valid Alerta alerta) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(alertaRepository.save(alerta));
+    public ResponseEntity<Alerta> criar(@RequestBody Alerta alerta) {
+        Alerta salvo = alertaRepository.save(alerta);
+        return ResponseEntity.status(HttpStatus.CREATED).body(salvo);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Alerta> atualizar(@PathVariable Long id, @RequestBody @Valid Alerta alertaAtualizado) {
-        Optional<Alerta> alertaOptional = alertaRepository.findById(id);
-        if (alertaOptional.isPresent()) {
-            Alerta alerta = alertaOptional.get();
-            alerta.setTipoAlerta(alertaAtualizado.getTipoAlerta());
-            alerta.setDescricao(alertaAtualizado.getDescricao());
-            alerta.setCepAlerta(alertaAtualizado.getCepAlerta());
-            alerta.setDataHora(alertaAtualizado.getDataHora());
-            return ResponseEntity.ok(alertaRepository.save(alerta));
+    public ResponseEntity<Alerta> atualizar(@PathVariable Long id, @RequestBody Alerta alerta) {
+        if (alertaRepository.existsById(id)) {
+            alerta.setIdAlerta(id);
+            Alerta salvo = alertaRepository.save(alerta);
+            return ResponseEntity.ok(salvo);
         }
         return ResponseEntity.notFound().build();
     }
