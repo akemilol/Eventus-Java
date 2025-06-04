@@ -1,35 +1,13 @@
-package br.com.eventus.eventus_api.model;
+package br.com.eventus.eventus_api.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "abrigo")
-public class Abrigo {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_abrigo")
+public class AbrigoDTO {
     private Long idAbrigo;
-
-    @Column(name = "nome_abrigo", nullable = false, length = 100)
     private String nomeAbrigo;
-
-    @Column(name = "endereco_abrigo", nullable = false, length = 300)
     private String enderecoAbrigo;
-
-    @Column(name = "cep_abrigo", nullable = false, length = 8)
     private String cepAbrigo;
-
-    @Column(name = "cidade_abrigo", length = 50)
     private String cidadeAbrigo;
-
-    @Column(name = "uf_abrigo", length = 2)
     private String ufAbrigo;
-
-    @Column(name = "latitude_abrig")
     private Double latitudeAbrig;
-
-    @Column(name = "longitude_abrig")
     private Double longitudeAbrig;
 
     public Long getIdAbrigo() {
