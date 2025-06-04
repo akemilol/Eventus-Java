@@ -35,8 +35,8 @@ public class UsuarioEventus implements UserDetails {
     private String senhaUsuario;
 
     @NotBlank
-    @Pattern(regexp = "\\d{9}", message = "O CPF deve ter 9 dígitos")
-    @Column(name = "cpf_usuario", nullable = false, unique = true, length = 9)
+    @Pattern(regexp = "\\d{11}", message = "O CPF deve ter 11 dígitos")
+    @Column(name = "cpf_usuario", nullable = false, unique = true, length = 11)
     private String cpfUsuario;
 
     @NotBlank
@@ -53,66 +53,52 @@ public class UsuarioEventus implements UserDetails {
     @Column(name = "role", nullable = false)
     private UserRole role;
 
+
     public Long getIdUsuario() {
         return idUsuario;
     }
-
     public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
-
     public String getNomeUsuario() {
         return nomeUsuario;
     }
-
     public void setNomeUsuario(String nomeUsuario) {
         this.nomeUsuario = nomeUsuario;
     }
-
     public String getEmailUsuario() {
         return emailUsuario;
     }
-
     public void setEmailUsuario(String emailUsuario) {
         this.emailUsuario = emailUsuario;
     }
-
     public String getSenhaUsuario() {
         return senhaUsuario;
     }
-
     public void setSenhaUsuario(String senhaUsuario) {
         this.senhaUsuario = senhaUsuario;
     }
-
     public String getCpfUsuario() {
         return cpfUsuario;
     }
-
     public void setCpfUsuario(String cpfUsuario) {
         this.cpfUsuario = cpfUsuario;
     }
-
     public String getCepUsuario() {
         return cepUsuario;
     }
-
     public void setCepUsuario(String cepUsuario) {
         this.cepUsuario = cepUsuario;
     }
-
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
-
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-
     public UserRole getRole() {
         return role;
     }
-
     public void setRole(UserRole role) {
         this.role = role;
     }
@@ -121,32 +107,26 @@ public class UsuarioEventus implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
     }
-
     @Override
     public String getPassword() {
         return senhaUsuario;
     }
-
     @Override
     public String getUsername() {
         return emailUsuario;
     }
-
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
-
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
-
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
-
     @Override
     public boolean isEnabled() {
         return true;

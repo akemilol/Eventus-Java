@@ -20,7 +20,7 @@ public class UsuarioCreateDTO {
     private String senhaUsuario;
 
     @NotBlank
-    @Pattern(regexp = "\\d{9}", message = "O CPF deve ter 9 dígitos")
+    @Pattern(regexp = "\\d{11}", message = "O CPF deve ter 11 dígitos")
     private String cpfUsuario;
 
     @NotBlank
@@ -32,6 +32,7 @@ public class UsuarioCreateDTO {
 
     @NotNull
     private UserRole role;
+
 
     public String getNomeUsuario() {
         return nomeUsuario;
