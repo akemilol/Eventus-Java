@@ -1,30 +1,13 @@
-package br.com.eventus.eventus_api.model;
+package br.com.eventus.eventus_api.dto;
 
-import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "relato")
-public class Relato {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_relato")
+public class RelatoDTO {
     private Long idRelato;
-
-    @Column(name = "usuario_id_usuario", nullable = false)
     private Long usuarioIdUsuario;
-
-    @Column(name = "tipo_relato", nullable = false, length = 30)
     private String tipoRelato;
-
-    @Column(name = "descricao_relato", nullable = false, length = 200)
     private String descricaoRelato;
-
-    @Column(name = "cep_relato", nullable = false, length = 8)
     private String cepRelato;
-
-    @Column(name = "data_hora_relato")
     private LocalDateTime dataHoraRelato;
 
     public Long getIdRelato() {
