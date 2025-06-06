@@ -1,0 +1,6 @@
+FROM postgres:15
+WORKDIR /var/lib/postgresql/data
+ENV POSTGRES_DB=eventusdb
+ENV POSTGRES_USER=eventus_user
+ENV POSTGRES_PASSWORD=eventus_pass
+EXPOSE 5432
