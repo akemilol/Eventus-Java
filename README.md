@@ -8,7 +8,7 @@ Eventus antecipa riscos, protege comunidades e permite respostas rápidas em sit
 
 ---
 
-## 🎬 Demonstração e Pitch
+## 🎬 Vídeos:
 
 - [🔗 Vídeo de Demonstração](https://youtu.be/SEU-VIDEO-DEMO)
 - [🔗 PITCH](https://youtu.be/SEU-VIDEO-PITCH)
@@ -50,6 +50,12 @@ A API Eventus está **100% operacional na Azure**, utilizando práticas de conta
 - Ambos conectados em uma **rede Docker** que garante segurança e performance.
 - O banco utiliza usuário não-root e volume Docker para persistência de dados mesmo após reinícios.
 - O acesso externo à API está liberado na porta 8080 da VM.
+
+---
+
+## 🎬 Vídeos:
+
+- [🔗 Vídeo de Demonstração](https://youtu.be/SEU-VIDEO-DEMO)
 
 ---
 
