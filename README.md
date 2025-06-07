@@ -11,7 +11,7 @@ Eventus antecipa riscos, protege comunidades e permite respostas rápidas em sit
 ## 🎬 Demonstração e Pitch
 
 - [🔗 Vídeo de Demonstração](https://youtu.be/SEU-VIDEO-DEMO)
-- [🔗 PITCH)](https://youtu.be/SEU-VIDEO-PITCH)
+- [🔗 PITCH](https://youtu.be/SEU-VIDEO-PITCH)
 
 ---
 
