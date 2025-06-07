@@ -15,8 +15,6 @@ Eventus antecipa riscos, protege comunidades e permite respostas rápidas em sit
 
 ---
 
-## 1️⃣ Parte 1 – API Java (Spring Boot) ☕️
-
 ### 🚀 Funcionalidades
 - Cadastro de usuário (ADMIN/USER), autenticação segura (JWT)
 - Cadastro e consulta de alertas, relatos, abrigos
@@ -40,18 +38,35 @@ Eventus antecipa riscos, protege comunidades e permite respostas rápidas em sit
 ```bash
 http://4.201.184.187:8080/swagger-ui.html
 ```
-# Parte 2 – Deploy em Cloud (Azure + Docker) ☁️🐳
+---
+# ☁️ Parte 2: Eventus (Cloud & Docker)
 
-## 🌐 Visão Geral
+## 🌍 Deploy Cloud — Como Funciona:
+A API Eventus está **100% operacional na Azure**, utilizando práticas de containerização Docker para garantir escalabilidade, portabilidade e alta disponibilidade.
 
-O deploy foi realizado manualmente em uma VM Ubuntu na Azure (região Brasil), utilizando dois containers Docker:
+- São **dois containers Docker** rodando na mesma VM Linux:  
+  1️⃣ Um para a API Java (Spring Boot)  
+  2️⃣ Outro para o banco de dados PostgreSQL  
+- Ambos conectados em uma **rede Docker** que garante segurança e performance.
+- O banco utiliza usuário não-root e volume Docker para persistência de dados mesmo após reinícios.
+- O acesso externo à API está liberado na porta 8080 da VM.
 
-###1️⃣ API Java
-###2️⃣ Banco de Dados PostgreSQL
-
-## 🎬 Demonstração
 ---
 
-- [🔗 Vídeo de Demonstração CLOUD](https://youtu.be/SEU-VIDEO-DEMO)
+## 🔎 Como acessar a API e o Swagger na nuvem
+Acesse a documentação interativa da API Eventus diretamente pelo navegador:
 
-  ---
+```bash
+http://4.201.184.187:8080/swagger-ui.html
+```
+
+## Pelo Swagger, você pode:
+- Realizar cadastros, login e todas as operações CRUD dos módulos (usuário, alerta, relato, abrigos, vínculos)
+- Autenticar e obter o token JWT para usar os endpoints protegidos
+- Testar e visualizar em tempo real todos os retornos e respostas da API na cloud
+
+---
+
+## 👩‍💻 Integrantes: 
+- 💁‍♀️Valéria Conceição Dos Santos - RM: 557177
+- 💁‍♀️Mirela Pinheiro Silva Rodrigues - RM: 558191
