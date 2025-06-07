@@ -55,7 +55,7 @@ A API Eventus está **100% operacional na Azure**, utilizando práticas de conta
 
 ## 🎬 Vídeos:
 
-- [🔗 Vídeo de Demonstração](https://youtu.be/SEU-VIDEO-DEMO)
+- [🔗 Vídeo de Demonstração](https://youtu.be/tOTVxaakXTU?si=i29FENyucF_0kLBj)
 
 ---
 
