@@ -73,6 +73,78 @@ http://4.201.184.187:8080/swagger-ui.html
 
 ---
 
+## JSON
+### POST /auth/register (Usuário ADMIN)
+
+```bash
+{
+  "nomeUsuario": "Mirela Antunes",
+  "emailUsuario": "Mirela.antunes@email.com",
+  "senhaUsuario": "Senhamimi@2025",
+  "cpfUsuario": "74335296315",
+  "cepUsuario": "05055020",
+  "dataNascimento": "1990-11-29",
+  "role": "ADMIN"
+}
+```
+### POST /auth/login (ADMIN)
+
+```bash
+{
+  "email": "Mirela.antunes@email.com",
+  "senha": "Senhamimi@2025"
+}
+```
+
+### POST /alertas
+
+```bash
+{
+  "tipoAlerta": "VENTANIA",
+  "descricao": "Ventos fortes atingindo o bairro Jardim das Palmeiras.",
+  "cepAlerta": "05055020",
+  "dataHora": "2025-07-20T14:00:00Z"
+}
+```
+
+### POST /relatos
+```bash
+{
+  "usuarioIdUsuario": 3,
+  "tipoRelato": "QUEDA DE ÁRVORES",
+  "descricaoRelato": "Diversas árvores caídas após ventania.",
+  "cepRelato": "05055020",
+  "dataHoraRelato": "2025-07-20T16:00:00Z"
+}
+```
+### POST /abrigos
+
+```bash
+{
+  "usuarioIdUsuario": 3,
+  "alertasId": 3,
+  "dataRecebimento": "2025-07-20"
+}
+```
+### Vínculo Usuário-Abrigo
+
+```bash
+{
+  "usuarioIdUsuario": 3,
+  "abrigosId": 3
+}
+```
+
+### Vínculo Usuário-Alerta
+
+```bash
+{
+  "usuarioIdUsuario": 3,
+  "alertasId": 3,
+  "dataRecebimento": "2025-07-20"
+}
+```
+
 ## 👩‍💻 Integrantes: 
 - 💁‍♀️Valéria Conceição Dos Santos - RM: 557177
 - 💁‍♀️Mirela Pinheiro Silva Rodrigues - RM: 558191
